@@ -1,0 +1,76 @@
+<script lang="ts">
+	import { dev } from "$app/environment";
+	import { page } from "$app/stores";
+	import { onMount } from "svelte";
+
+	import { Navbar } from "$layout";
+	import type { NavbarItem } from "$data/links";
+
+	import "fluent-svelte/theme.css";
+
+	import Chat from "@fluentui/svg-icons/icons/chat_24_regular.svg?raw";
+	import Code from "@fluentui/svg-icons/icons/code_24_regular.svg?raw";
+	import Home from "@fluentui/svg-icons/icons/home_24_regular.svg?raw";
+	import News from "@fluentui/svg-icons/icons/news_24_regular.svg?raw";
+	// import PaintBrush from "@fluentui/svg-icons/icons/paint_brush_24_regular.svg?raw";
+
+	const navbarItems: NavbarItem[] = [
+		{
+			name: "Home",
+			path: "/",
+			icon: Home
+		},
+		{
+			name: "Blog",
+			path: "/blog",
+			icon: News
+		}
+	];
+</script>
+
+<svelte:head>
+	<meta content="Dongle's website" name="og:site_name" />
+	<meta content="website" name="og:type" />
+	<meta
+		content="Dongle's website."
+		name="description"
+	/>
+	<meta
+		content="Dongle's website."
+		name="og:description"
+	/>
+	<meta
+		content="Dongle's website."
+		name="twitter:description"
+	/>
+	<meta content="Dongle" name="author" />
+	<meta content="#0078d4" name="theme-color" />
+	<meta content="summary_large_image" name="twitter:card" />
+	<meta content="@a_donglee" name="twitter:site" />
+	<meta content="@a_donglee" name="twitter:creator" />
+
+	{#if !dev}
+		<script>
+			(function (c, l, a, r, i, t, y) {
+				c[a] =
+					c[a] ||
+					function () {
+						(c[a].q = c[a].q || []).push(arguments);
+					};
+				t = l.createElement(r);
+				t.async = true;
+				t.src = "https://www.clarity.ms/tag/" + i;
+				y = l.getElementsByTagName(r)[0];
+				y.parentNode.insertBefore(t, y);
+			})(window, document, "clarity", "script", "4q1wajdktz");
+		</script>
+	{/if}
+</svelte:head>
+
+<Navbar items={navbarItems} />
+<slot />
+
+<style global lang="scss">
+	@use "src/styles/global";
+	@use "src/styles/markdown";
+</style>

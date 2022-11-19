@@ -1,0 +1,75 @@
+@use "../mixins" as *;
+
+:global {
+    #hero-section {
+        @include flex($direction: row, $justify: center, $align: center);
+        position: relative;
+        align-self: center;
+        padding: 50px;
+        margin: 60px;
+        border-radius: var(--fds-overlay-corner-radius);
+        background-color: var(--fds-layer-background-default);
+        border: var(--fds-control-border-default);
+        box-shadow: var(--fds-card-shadow);
+        max-width: 548px;
+
+        >.page-section-inner {
+            @include flex($direction: row, $align: center);
+            position: relative;
+        }
+
+        h1 {
+            font-size: 5.4rem;
+        }
+
+        .buttons-spacer .button {
+            min-width: 128px;
+        }
+    }
+
+    .iconButtonPad {
+        margin-top: 5px;
+    }
+
+    #hero-section-container {
+        flex: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .social-media-list {
+        @include flex($direction: row, $justify: center, $align: center, $inline: inline, $wrap: wrap, $gap: 5px);
+    }
+}
+
+.hero- {
+    &contents {
+        position: relative;
+        word-wrap: break-word;
+        @include flex($direction: column, $justify: center, $align: start);
+    }
+
+    &image {
+        border-radius: 50%;
+        max-height: 100px;
+        max-width: 100px;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (width < 648px) {
+    #hero-section {
+        @include flex($direction: column, $justify: center, $align: center);
+    }
+
+    .hero-contents {
+        @include flex($direction: column, $justify: center, $align: center);
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+}

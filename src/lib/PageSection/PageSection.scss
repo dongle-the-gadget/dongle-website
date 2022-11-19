@@ -1,0 +1,65 @@
+@use "src/styles/mixins" as *;
+
+.page-section {
+	position: relative;
+	z-index: 1;
+
+	:global {
+		h1,
+		h2,
+		h3 {
+			margin: 0;
+			color: var(--fds-text-primary);
+			font-weight: 600;
+		}
+
+		h1 {
+			font-size: 7.2rem;
+		}
+
+		h2 {
+			font-size: 4.8rem;
+		}
+
+		h3 {
+			font-size: 3.2rem;
+		}
+
+		p {
+			max-inline-size: 65ch;
+			margin-block: 12px 24px;
+			color: var(--fds-text-secondary);
+			font: {
+				size: 1.6rem;
+				weight: 400;
+			}
+			line-height: 1.65;
+			@media (prefers-color-scheme: dark) {
+				color: var(--fds-text-tertiary);
+			}
+		}
+
+		hr {
+			margin: 0 0 24px;
+			border: none;
+			border-block-start: 1px solid var(--fds-divider-stroke-default);
+		}
+
+		.buttons-spacer {
+			@include flex($inline: true, $wrap: true, $gap: 8px);
+		}
+	}
+
+	&-inner {
+		position: relative;
+		inline-size: 100%;
+		max-inline-size: 2048px;
+		block-size: 100%;
+		margin: 0 auto;
+		padding: 72px;
+
+		@media screen and (width < 648px) {
+			padding: 36px;
+		}
+	}
+}

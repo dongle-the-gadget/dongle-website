@@ -1,0 +1,73 @@
+@use "../mixins" as *;
+
+.blog-post {
+	padding: 48px;
+  margin-inline: auto;
+  max-inline-size: 100%;
+
+	article {
+		max-inline-size: 768px;
+	}
+
+	.markdown-body {
+		font-size: 1.6rem;
+		line-height: 2.6rem;
+	}
+}
+
+:global(.back-button) {
+	color: var(--fds-text-tertiary);
+}
+
+.post- {
+	&title {
+		@include flex($align: center, $gap: 12px);
+		margin-inline-start: -48px;
+
+		h1 {
+			margin: 0;
+			font: {
+				size: 3.6rem;
+				weight: 600;
+			}
+		}
+
+		@media screen and (width < 1024px) {
+			align-items: flex-start;
+			flex-direction: column;
+			margin: 0;
+		}
+	}
+
+	&info {
+		@include flex($align: center, $gap: 12px);
+		margin-block-end: 24px;
+		padding: 18px 0;
+		border-block-end: 1px solid var(--fds-divider-stroke-default);
+		color: var(--fds-text-tertiary);
+
+		img {
+			inline-size: 32px;
+			block-size: 32px;
+			border: 1px solid var(--fds-card-stroke-default);
+			border-radius: 50%;
+		}
+
+		:global {
+			.menu-flyout {
+				min-inline-size: 120px;
+
+				&-container {
+					margin-inline-start: auto;
+				}
+			}
+		}
+	}
+
+	&thumbnail {
+		max-inline-size: 100%;
+		margin-block-end: 48px;
+		border: 1px solid var(--fds-card-stroke-default);
+		border-radius: var(--fds-overlay-corner-radius);
+	}
+}
