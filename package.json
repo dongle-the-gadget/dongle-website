@@ -6,7 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"postbuild": "pnpm generate:sitemap",
-    	"generate:sitemap": "svelte-sitemap --domain roundadorner.tk; cp build/sitemap.xml static/sitemap.xml",
+		"generate:sitemap": "svelte-sitemap --domain roundadorner.tk; cp build/sitemap.xml static/sitemap.xml",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
@@ -15,7 +15,7 @@
 		"@fec/remark-a11y-emoji": "^3.1.0",
 		"@fluentui/svg-icons": "^1.1.187",
 		"@sveltejs/adapter-vercel": "next",
-		"@sveltejs/kit": "next",
+		"@sveltejs/kit": "1.0.0-next.553",
 		"autoprefixer": "^10.4.13",
 		"cssnano": "^5.1.14",
 		"fluent-svelte": "^1.6.0",
