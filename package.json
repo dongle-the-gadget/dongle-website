@@ -5,6 +5,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"postbuild": "pnpm generate:sitemap",
+    	"generate:sitemap": "svelte-sitemap --domain roundadorner.tk; cp build/sitemap.xml static/sitemap.xml",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
@@ -27,6 +29,7 @@
 		"svelte": "^3.53.1",
 		"svelte-check": "^2.9.2",
 		"svelte-preprocess": "^4.10.7",
+		"svelte-sitemap": "^2.5.3",
 		"tslib": "^2.4.1",
 		"typescript": "^4.8.4",
 		"vite": "^3.2.3"
