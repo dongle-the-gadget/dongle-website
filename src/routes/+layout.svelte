@@ -8,10 +8,9 @@
 
 	import "fluent-svelte/theme.css";
 
-	import Chat from "@fluentui/svg-icons/icons/chat_24_regular.svg?raw";
-	import Code from "@fluentui/svg-icons/icons/code_24_regular.svg?raw";
 	import Home from "@fluentui/svg-icons/icons/home_24_regular.svg?raw";
 	import News from "@fluentui/svg-icons/icons/news_24_regular.svg?raw";
+	import History from "@fluentui/svg-icons/icons/history_24_regular.svg?raw";
 	// import PaintBrush from "@fluentui/svg-icons/icons/paint_brush_24_regular.svg?raw";
 
 	const navbarItems: NavbarItem[] = [
@@ -24,6 +23,15 @@
 			name: "Blog",
 			path: "/blog",
 			icon: News
+		}
+	];
+
+	const navbarButtons = [
+		{
+			icon: History,
+			href: "https://dongle-the-gadget.github.io/archives/web2",
+			label: "Visit archived website",
+			isExternal: false
 		}
 	];
 </script>
@@ -67,7 +75,7 @@
 	{/if}
 </svelte:head>
 
-<Navbar items={navbarItems} />
+<Navbar items={navbarItems} buttons={navbarButtons} />
 <slot />
 
 <style global lang="scss">

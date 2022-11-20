@@ -11,6 +11,7 @@
 		icon: string;
 		href: string;
 		label: string;
+		isExternal: boolean;
 	}[] = [];
 
 	let innerWidth = 649; // Don't render the mobile layout before hydration
@@ -77,17 +78,16 @@
 		</nav>
 		<div class="buttons">
 			{#if innerWidth > 648}
-				{#each buttons as { icon, href, label }}
-					<Tooltip text={label} placement="bottom" offset={0}>
-						<a
-							class="button"
-							{href}
-							aria-label={label}
-							{...externalLink}
-						>
-							{@html icon}
-						</a>
-					</Tooltip>
+				{#each buttons as { icon, href, label, isExternal }}
+					{#if isExternal}
+					<a class="button" {href} aria-label={label} {...externalLink} title={label}>
+						{@html icon}
+					</a>
+					{:else}
+					<a class="button" {href} aria-label={label} title={label}>
+						{@html icon}
+					</a>
+					{/if}
 				{/each}
 			{:else}
 				<button
