@@ -27,6 +27,8 @@
 	--font-family-sans-serif: "Segoe UI Variable Display", "Segoe UI", "Inter", sans-serif;
 	--font-family-monospace: "Cascadia Code", "Fira Code", "Consolas", monospace;
 
+	background-color: var(--fds-solid-background-base);
+
 	background-image: url('/bloom/bloom-mica-light.png');
 	background-position: center;
 	background-attachment: fixed;
