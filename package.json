@@ -6,7 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"postbuild": "pnpm generate:sitemap",
-		"generate:sitemap": "svelte-sitemap --domain https://www.roundadorner.tk --out-dir public; cp public/sitemap.xml static/sitemap.xml",
+		"generate:sitemap": "svelte-sitemap --domain https://www.roundadorner.tk -o public; cp public/sitemap.xml static/sitemap.xml",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
