@@ -67,3 +67,9 @@ Fiddler Classic went completely missing, I had to reinstall it.
 Same fate with ILSpy.
 
 The Microsoft 365 (formely Office) suite of apps is a little bit interesting. The app reverted back to the old design, for a start. I was also signed out off all of my organizational account that I signed in using Connected Services. Trying to sign back in just gave me Error Code 1001. However, when I tried to access an organizational resource and entered in my credentials when the app open, it works fine (?!)
+
+## Final thoughts
+
+Why did I do this?! And also not using some tool like Recuva or Windows File Recovery app to restore it...
+
+Beyond me.
