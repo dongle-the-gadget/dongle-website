@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<Metadata title="Dongle • {title}" image={thumbnail} />
+	<Metadata title="Dongle • {title}" heroImage={thumbnail} />
 </svelte:head>
 
 <section class="blog-post">

@@ -3,12 +3,15 @@
 
 	export let title = "Dongle";
 
-	export let image = "";
+	export let heroImage = "";
 </script>
 
 <title>{title}</title>
 <meta content={title} name="og:title">
 <meta content={title} name="twitter:title">
 
-<meta content={image} name="og:image">
-<meta content="https://{$page.url.host}{image}" name="twitter:image">
+{#if heroImage}
+<meta content={heroImage} name="og:image">
+<meta content="https://{$page.url.host}{heroImage}" name="twitter:image">
+<meta name="twitter:card" content="summary_large_image">
+{/if}

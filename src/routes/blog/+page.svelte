@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<Metadata title="Dongle • Blog" image="blog" />
+	<Metadata title="Dongle • Blog" />
 </svelte:head>
 
 <svelte:window
