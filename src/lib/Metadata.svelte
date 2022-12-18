@@ -9,9 +9,6 @@
 <title>{title}</title>
 <meta content={title} name="og:title">
 <meta content={title} name="twitter:title">
-
-{#if heroImage}
 <meta content="https://{$page.url.host}{heroImage}" name="og:image">
 <meta content="https://{$page.url.host}{heroImage}" name="twitter:image:src">
 <meta name="twitter:card" content="summary_large_image">
-{/if}
