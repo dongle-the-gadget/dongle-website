@@ -4,6 +4,8 @@
 	color: var(--fds-text-primary);
 	font-size: 1.4rem;
 	line-height: 1.45;
+	display: flex;
+	flex-direction: column;
 
 	// Spacing
 	> *:first-child {
@@ -33,6 +35,8 @@
 	// Images
 	figure {
 		margin: 16px 0;
+
+		align-self: center;
 
 		&.margin- {
 			&top {
