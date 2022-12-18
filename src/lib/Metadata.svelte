@@ -12,6 +12,6 @@
 
 {#if heroImage}
 <meta content="https://{$page.url.host}{heroImage}" name="og:image">
-<meta content="https://{$page.url.host}{heroImage}" name="twitter:image">
+<meta content="https://{$page.url.host}{heroImage}" name="twitter:image:src">
 <meta name="twitter:card" content="summary_large_image">
 {/if}
