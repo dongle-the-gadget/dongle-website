@@ -1,30 +1,11 @@
 @use "./mixins" as *;
 
-// Sideload inter as a fallback font
-@font-face {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 100 900;
-	font-display: swap;
-	src: url("/fonts/Inter-roman.var.woff2") format("woff2");
-	font-named-instance: "Regular";
-}
-
-@font-face {
-	font-family: "Inter";
-	font-style: italic;
-	font-weight: 100 900;
-	font-display: swap;
-	src: url("/fonts/Inter-italic.var.woff2") format("woff2");
-	font-named-instance: "Italic";
-}
-
 /*
  * Global Variables
  */
 
 :root {
-	--font-family-sans-serif: "Segoe UI Variable Display", "Segoe UI", "Inter", sans-serif;
+	--font-family-sans-serif: var(--fds-font-family-text);
 	--font-family-monospace: "Cascadia Code", "Fira Code", "Consolas", monospace;
 
 	background-color: var(--fds-solid-background-base);
@@ -87,6 +68,13 @@ input,
 select,
 textarea {
 	font-family: var(--font-family-sans-serif);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--fds-font-family-display);
 }
 
 // Selection colors
