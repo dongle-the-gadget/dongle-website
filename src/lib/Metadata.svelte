@@ -10,5 +10,4 @@
 <meta content="https://www.roundadorner.tk{heroImage}" name="og:image">
 <meta content="https://www.roundadorner.tk{heroImage}" name="og:image:secure_url">
 <meta content="https://www.roundadorner.tk{heroImage}" name="twitter:image">
-<meta content="https://www.roundadorner.tk{heroImage}" name="twitter:image:src">
 <meta name="twitter:card" content="summary_large_image">
