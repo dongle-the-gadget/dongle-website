@@ -2,6 +2,8 @@
 	export let title = "Dongle";
 
 	export let heroImage = "";
+
+	export let description = "Dongle's website";
 </script>
 
 <title>{title}</title>
@@ -12,3 +14,15 @@
 <meta content="https://www.roundadorner.tk{heroImage}" name="twitter:image">
 <meta content="https://www.roundadorner.tk{heroImage}" name="twitter:image:src">
 <meta content="summary_large_image" name="twitter:card">
+<meta
+	content={description}
+	name="description"
+/>
+<meta
+	content={description}
+	name="og:description"
+/>
+<meta
+	content={description}
+	name="twitter:description"
+/>

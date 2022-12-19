@@ -7,11 +7,11 @@
 
 	export let data: LayoutData;
 
-	$: ({ title, thumbnail, author, date } = data);
+	$: ({ title, thumbnail, author, date, description } = data);
 </script>
 
 <svelte:head>
-	<Metadata title="Dongle • {title}" heroImage={thumbnail} />
+	<Metadata title="Dongle • {title}" heroImage={thumbnail} description={description} />
 </svelte:head>
 
 <section class="blog-post">

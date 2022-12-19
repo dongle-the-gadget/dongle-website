@@ -39,18 +39,6 @@
 <svelte:head>
 	<meta content="Dongle's website" name="og:site_name" />
 	<meta content="website" name="og:type" />
-	<meta
-		content="Dongle's website."
-		name="description"
-	/>
-	<meta
-		content="Dongle's website."
-		name="og:description"
-	/>
-	<meta
-		content="Dongle's website."
-		name="twitter:description"
-	/>
 	<meta content="Dongle" name="author" />
 	<meta content="#0078d4" name="theme-color" />
 	<meta content="summary_large_image" name="twitter:card" />
