@@ -23,6 +23,9 @@
 				>Software development hobbyist. Makes a mess of stuff that
 				sometimes works.</TextBlock
 			>
+			<TextBlock
+				>Has a Twitter account but not on Mastodon, Cohost, etc. and is not going to get one in the near future.</TextBlock
+			>
 			<div class="social-media-list">
 				<IconButton
 					class="iconButtonPad"
