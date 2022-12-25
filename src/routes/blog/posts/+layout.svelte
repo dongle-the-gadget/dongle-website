@@ -8,10 +8,10 @@
 
 	export let data: LayoutData;
 
-	$: ({ title, thumbnail, author, date, description } = data);
+	$: ({ title, thumbnail, author, date, description, host } = data);
 </script>
 
-<Metadata title="Dongle • {title}" heroImage={thumbnail} description={description} />
+<Metadata title="Dongle • {title}" heroImage={thumbnail} description={description} imageHost={host} />
 
 <section class="blog-post">
 	<article>

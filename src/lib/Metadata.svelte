@@ -4,6 +4,8 @@
 	export let heroImage = "";
 
 	export let description = "Dongle's website";
+
+	export let imageHost = "";
 </script>
 
 <svelte:head>
@@ -12,15 +14,15 @@
 	<meta content={title} name="twitter:title" />
 	<meta content="https://www.roundadorner.tk{heroImage}" name="og:image" />
 	<meta
-		content="https://www.roundadorner.tk{heroImage}"
+		content="https://{imageHost}{heroImage}"
 		name="og:image:secure_url"
 	/>
 	<meta
-		content="https://www.roundadorner.tk{heroImage}"
+		content="https://{imageHost}{heroImage}"
 		name="twitter:image"
 	/>
 	<meta
-		content="https://www.roundadorner.tk{heroImage}"
+		content="https://{imageHost}{heroImage}"
 		name="twitter:image:src"
 	/>
 	<meta content="summary_large_image" name="twitter:card" />
