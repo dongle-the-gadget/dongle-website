@@ -12,7 +12,7 @@
 	<title>{title}</title>
 	<meta content={title} name="og:title" />
 	<meta content={title} name="twitter:title" />
-	<meta content="https://www.roundadorner.tk{heroImage}" name="og:image" />
+	<meta content="{imageHost}{heroImage}" name="og:image" />
 	<meta
 		content="https://{imageHost}{heroImage}"
 		name="og:image:secure_url"
