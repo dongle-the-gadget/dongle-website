@@ -13,7 +13,8 @@ export const load: LayoutLoad = async ({ route, url }) => {
 			author: metadata.author,
 			thumbnail: metadata.thumbnail,
 			date: metadata.date,
-			host: url.host
+			host: url.host,
+			protocol: url.protocol
 		}
 	} catch {
 		throw error(404, "No such blog post was found!");
