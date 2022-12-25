@@ -4,15 +4,14 @@
 	import ArrowLeft from "@fluentui/svg-icons/icons/arrow_left_24_regular.svg?raw";
 	import { IconButton, MenuFlyout, MenuFlyoutItem } from "fluent-svelte";
 	import type { LayoutData } from "./$types";
+	import { page } from "$app/stores";
 
 	export let data: LayoutData;
 
 	$: ({ title, thumbnail, author, date, description } = data);
 </script>
 
-<svelte:head>
-	<Metadata title="Dongle • {title}" heroImage={thumbnail} description={description} />
-</svelte:head>
+<Metadata title="Dongle • {title}" heroImage={thumbnail} description={description} />
 
 <section class="blog-post">
 	<article>
@@ -48,25 +47,23 @@
 					aria-label="Share"
 					class="share-button"
 					title="Share"
+					id="share-button"
 				>
 					{@html Share}
 				</IconButton>
 				<svelte:fragment slot="flyout">
 					<MenuFlyoutItem
-						on:click={() => navigator.clipboard.writeText(window.location.href)}
+						on:click={() => navigator.clipboard.writeText($page.url.href)}
 					>
 						Copy URL
 					</MenuFlyoutItem>
 					<MenuFlyoutItem
-						href="https://twitter.com/intent/tweet?text={window.location.href}"
-						{...externalLink}
+						on:click={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent($page.url.href)}`, "_blank")}
 					>
 						Twitter
 					</MenuFlyoutItem>
 					<MenuFlyoutItem
-						href="https://www.facebook.com/sharer/sharer.php?u={window.location
-							.href}"
-						{...externalLink}
+						on:click={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent($page.url.href)}`, "_blank")}
 					>
 						Facebook
 					</MenuFlyoutItem>

@@ -60,6 +60,12 @@
 				&-container {
 					margin-inline-start: auto;
 				}
+
+				&-item :any-link {
+					text-decoration: none;
+					color: currentColor;
+					min-inline-size: 100%;
+				}
 			}
 		}
 	}

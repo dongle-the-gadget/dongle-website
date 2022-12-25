@@ -4,9 +4,7 @@
 	import { Button, TextBlock } from "fluent-svelte";
 </script>
 
-<svelte:head>
-	<Metadata />
-</svelte:head>
+<Metadata />
 
 <div class="error-page">
 	<div class="error-panel">

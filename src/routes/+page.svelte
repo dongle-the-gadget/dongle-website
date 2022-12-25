@@ -5,9 +5,7 @@
 	let { twitter, github, reddit } = links;
 </script>
 
-<svelte:head>
-	<Metadata title="Dongle • Home" />
-</svelte:head>
+<Metadata title="Dongle • Home" />
 
 <div id="hero-section-container">
 	<div id="hero-section">
