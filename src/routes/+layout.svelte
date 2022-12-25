@@ -41,7 +41,6 @@
 	<meta content="website" name="og:type" />
 	<meta content="Dongle" name="author" />
 	<meta content="#0078d4" name="theme-color" />
-	<meta content="summary_large_image" name="twitter:card" />
 	<meta content="@a_donglee" name="twitter:site" />
 	<meta content="@a_donglee" name="twitter:creator" />
 

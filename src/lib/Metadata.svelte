@@ -14,7 +14,7 @@
 	<title>{title}</title>
 	<meta content={title} name="og:title" />
 	<meta content={title} name="twitter:title" />
-	{#if heroImage}
+	{#if heroImage && imageHost && imageProtocol}
 		<meta
 			content="{imageProtocol}//{imageHost}{heroImage}"
 			name="og:image"
@@ -24,6 +24,10 @@
 			name="twitter:image"
 		/>
 		<meta content="summary_large_image" name="twitter:card" />
+	{:else}
+		<meta content="summary" name="twitter:card" />
+		<meta content="https://avatars.githubusercontent.com/dongle-the-gadget" name="twitter:image" />
+		<meta content="https://avatars.githubusercontent.com/dongle-the-gadget" name="og:image" />
 	{/if}
 	<meta content={description} name="description" />
 	<meta content={description} name="og:description" />
