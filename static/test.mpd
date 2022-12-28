@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" mediaPresentationDuration="PT0H0M0.000S" minBufferTime="PT0H0M0.000S" timeShiftBufferDepth="PT0H0M0.000S" suggestedPresentationDelay="PT0H0M0.000S" maxSegmentDuration="PT0H0M0.000S" maxSubsegmentDuration="PT0H0M0.000S" xmlns:cenc="urn:mpeg:cenc:2013">
+<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-main:2011" type="static" mediaPresentationDuration="PT0H0M0.000S" minBufferTime="PT0H0M0.000S" timeShiftBufferDepth="PT0H0M0.000S" suggestedPresentationDelay="PT0H0M0.000S" maxSegmentDuration="PT0H0M0.000S" maxSubsegmentDuration="PT0H0M0.000S" xmlns:cenc="urn:mpeg:cenc:2013">
     <Period>
         <AdaptationSet mimeType="video/webm" segmentAlignment="true" subsegmentAlignment="true" subsegmentStartsWithSAP="1" startWithSAP="1" maxWidth="1920" maxHeight="1080" maxFrameRate="30" par="1:1" lang="en">
             <Representation id="1" bandwidth="0" codecs="vp9" width="1920" height="1080" frameRate="30" sar="1:1" audioSamplingRate="48000" mimeType="video/webm">
