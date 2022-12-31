@@ -63,7 +63,9 @@
 </svelte:head>
 
 <Navbar items={navbarItems} buttons={navbarButtons} />
-<slot />
+<div class="background">
+	<slot />
+</div>
 
 <style global lang="scss">
 	@use "src/styles/global";

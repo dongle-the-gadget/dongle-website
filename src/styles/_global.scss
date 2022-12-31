@@ -9,12 +9,26 @@
 	--font-family-monospace: "Cascadia Code", "Fira Code", "Consolas", monospace;
 
 	background-color: var(--fds-solid-background-base);
+}
 
-	background-image: url('/bloom/bloom-mica-light.png');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: fixed;
+.background {
+	display: flex;
+	flex-direction: column;
+	block-size: 100%;
+	inline-size: 100%;
+	background-color: var(--fds-card-background-secondary);
+	min-height: 100vh;
+
+	&::before {
+		content: "";
+		background: url("/bloom/bloom-mica-light.png") 50% center / cover no-repeat fixed;
+		block-size: 100%;
+		inline-size: 100%;
+		inset: 0px;
+		position: fixed;
+		transform: scale(2);
+		z-index: -1;
+	}
 }
 
 /*
@@ -23,9 +37,6 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		color-scheme: light;
-
-		--mica-tint: 0, 0%, 95%;
-		--mica-tint-opacity: 0.8;
 	}
 }
 
@@ -35,10 +46,9 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		color-scheme: dark;
+	}
 
-		--mica-tint: 0, 0%, 13%;
-		--mica-tint-opacity: 0.8;
-
+	.background::before {
 		background-image: url('/bloom/bloom-mica-dark.png')
 	}
 }

@@ -6,15 +6,10 @@
 	@include flex($align: center);
 }
 
-.sticky {
-	position: sticky;
-	top: 0;
-	z-index: 101;
-}
-
 .navbar {
-	position: relative;
-	z-index: 10;
+	position: fixed;
+	inline-size: 100%;
+	z-index: 1000;
 	justify-content: space-between;
 	flex: 0 0 auto;
 	block-size: 58px;
