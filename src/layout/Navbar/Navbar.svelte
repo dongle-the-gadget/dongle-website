@@ -45,18 +45,74 @@
 <svelte:window bind:innerWidth on:click={handleOuterClick} />
 
 <div class="navbar">
-	<nav class="inner">
-		<a class="logo" href="/" data-sveltekit-prefetch> Dongle </a>
-		{#if innerWidth > 648}
-			<div class="divider" />
+	<div class="navbar-inner">
+		<nav class="inner">
+			<a class="logo" href="/" data-sveltekit-prefetch> Dongle </a>
+			{#if innerWidth > 648}
+				<div class="divider" />
+				{#each items as { name, path, external, icon, type }}
+					{#if type === "divider"}
+						<div class="divider" />
+					{:else}
+						<a
+							class="item"
+							data-sveltekit-prefetch
+							class:selected={$page.url.pathname === path ||
+								($page.url.pathname.split("/").length > 1 &&
+									path.split("/").length > 1 &&
+									$page.url.pathname.startsWith(path) &&
+									!(path === "" || path === "/")) ||
+								(path === "/" && $page.url.pathname === "")}
+							href={path}
+							target={external ? "_blank" : undefined}
+							rel={external ? "noreferrer noopener" : undefined}
+						>
+							{#if icon}
+								{@html icon}
+							{/if}
+							<span>{name}</span>
+						</a>
+					{/if}
+				{/each}
+			{/if}
+		</nav>
+		<div class="buttons">
+			{#if innerWidth > 648}
+				{#each buttons as { icon, href, label, isExternal }}
+					{#if isExternal}
+					<a class="button" {href} aria-label={label} {...externalLink} title={label}>
+						{@html icon}
+					</a>
+					{:else}
+					<a class="button" {href} aria-label={label} title={label}>
+						{@html icon}
+					</a>
+					{/if}
+				{/each}
+			{:else}
+				<button
+					on:click={toggleSidebar}
+					bind:this={sidebarButton}
+					class="button sidebar-button"
+				>
+					{@html Navigation}
+				</button>
+			{/if}
+		</div>
+		<aside
+			bind:this={sidebar}
+			class="sidebar scroller"
+			class:visible={sidebarVisible}
+		>
 			{#each items as { name, path, external, icon, type }}
 				{#if type === "divider"}
-					<div class="divider" />
+					<hr />
 				{:else}
-					<a
-						class="item"
+					<ListItem
+						type="navigation"
 						data-sveltekit-prefetch
-						class:selected={$page.url.pathname === path ||
+						on:click={toggleSidebar}
+						selected={$page.url.pathname === path ||
 							($page.url.pathname.split("/").length > 1 &&
 								path.split("/").length > 1 &&
 								$page.url.pathname.startsWith(path) &&
@@ -66,87 +122,33 @@
 						target={external ? "_blank" : undefined}
 						rel={external ? "noreferrer noopener" : undefined}
 					>
-						{#if icon}
-							{@html icon}
-						{/if}
+						<svelte:fragment slot="icon">
+							{#if icon}
+								{@html icon}
+							{/if}
+						</svelte:fragment>
 						<span>{name}</span>
-					</a>
+					</ListItem>
 				{/if}
 			{/each}
-		{/if}
-	</nav>
-	<div class="buttons">
-		{#if innerWidth > 648}
-			{#each buttons as { icon, href, label, isExternal }}
-				{#if isExternal}
-				<a class="button" {href} aria-label={label} {...externalLink} title={label}>
-					{@html icon}
-				</a>
-				{:else}
-				<a class="button" {href} aria-label={label} title={label}>
-					{@html icon}
-				</a>
-				{/if}
-			{/each}
-		{:else}
-			<button
-				on:click={toggleSidebar}
-				bind:this={sidebarButton}
-				class="button sidebar-button"
-			>
-				{@html Navigation}
-			</button>
-		{/if}
-	</div>
-	<aside
-		bind:this={sidebar}
-		class="sidebar scroller"
-		class:visible={sidebarVisible}
-	>
-		{#each items as { name, path, external, icon, type }}
-			{#if type === "divider"}
-				<hr />
-			{:else}
+			<hr />
+			{#each buttons as { icon, href, label }}
 				<ListItem
-					type="navigation"
+					{href}
 					data-sveltekit-prefetch
-					on:click={toggleSidebar}
-					selected={$page.url.pathname === path ||
-						($page.url.pathname.split("/").length > 1 &&
-							path.split("/").length > 1 &&
-							$page.url.pathname.startsWith(path) &&
-							!(path === "" || path === "/")) ||
-						(path === "/" && $page.url.pathname === "")}
-					href={path}
-					target={external ? "_blank" : undefined}
-					rel={external ? "noreferrer noopener" : undefined}
+					type="navigation"
+					{...externalLink}
 				>
 					<svelte:fragment slot="icon">
 						{#if icon}
 							{@html icon}
 						{/if}
 					</svelte:fragment>
-					<span>{name}</span>
+					<span>{label}</span>
 				</ListItem>
-			{/if}
-		{/each}
-		<hr />
-		{#each buttons as { icon, href, label }}
-			<ListItem
-				{href}
-				data-sveltekit-prefetch
-				type="navigation"
-				{...externalLink}
-			>
-				<svelte:fragment slot="icon">
-					{#if icon}
-						{@html icon}
-					{/if}
-				</svelte:fragment>
-				<span>{label}</span>
-			</ListItem>
-		{/each}
-	</aside>
+			{/each}
+		</aside>	
+	</div>
 </div>
 
 <style lang="scss">
