@@ -5,15 +5,15 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "svelte-kit preview",
+		"preview": "vite preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
 		"@fec/remark-a11y-emoji": "^3.1.0",
 		"@fluentui/svg-icons": "^1.1.192",
-		"@sveltejs/adapter-vercel": "1.0.0",
-		"@sveltejs/kit": "1.0.1",
+		"@sveltejs/adapter-vercel": "1.0.5",
+		"@sveltejs/kit": "1.2.2",
 		"autoprefixer": "^10.4.13",
 		"cssnano": "^5.1.14",
 		"fluent-svelte": "^1.6.0",
@@ -25,8 +25,8 @@
 		"remark-slug": "^7.0.1",
 		"sass": "^1.57.1",
 		"svelte": "^3.55.1",
-		"svelte-check": "^2.10.3",
-		"svelte-preprocess": "^4.10.7",
+		"svelte-check": "^3.0.2",
+		"svelte-preprocess": "^5.0.1",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.4",
 		"vite": "^4.0.4"
