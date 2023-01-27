@@ -4,7 +4,7 @@
   },
   "headers": [
     {
-      "source": "/.well-known/nostr.json?=_",
+      "source": "/.well-known/nostr.json\\?=_",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
