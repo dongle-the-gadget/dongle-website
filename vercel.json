@@ -1,13 +1,5 @@
 {
   "github": {
     "silent": true
-  },
-  "headers": [
-    {
-      "source": "/.well-known/nostr.json\\?=_",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
-    }
-  ]
+  }
 }
