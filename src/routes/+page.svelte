@@ -17,14 +17,10 @@
 		/>
 		<div class="hero-contents">
 			<TextBlock variant="titleLarge">Dongle</TextBlock>
-			<TextBlock
-				>Software development hobbyist. Makes a mess of stuff that
-				sometimes works.</TextBlock
-			>
-			<br>
-			<TextBlock
-				>Not on Mastodon (and I'm not getting one currently)</TextBlock
-			>
+			<TextBlock>
+				Software development hobbyist. Makes a mess of stuff that
+				sometimes works.
+				</TextBlock>
 			<div class="social-media-list">
 				<IconButton
 					class="iconButtonPad"
