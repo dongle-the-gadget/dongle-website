@@ -2,7 +2,7 @@
 title: When I deleted Local AppData...
 description: Now what?
 thumbnail: /blog-resources/deleted-localappdata/thumbnail.png
-date: 2021-12-18
+date: 2022-12-18
 author: dongle-the-gadget
 ---
 

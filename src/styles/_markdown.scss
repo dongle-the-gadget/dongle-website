@@ -32,6 +32,14 @@
 		margin-block-end: 16px;
 	}
 
+	blockquote > p:last-child {
+		margin-bottom: 0;
+	}
+
+	blockquote {
+		margin-bottom: 16px!important;
+	}
+
 	// Images
 	figure {
 		margin: 16px 0;
