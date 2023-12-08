@@ -2,12 +2,15 @@
 	import { BlogCard, HeaderChip, Metadata, PageSection, tilt, Titlebar } from "$lib";
 	import { Button, TextBlock } from "fluent-svelte";
 	import type { PageData } from "./$types";
+	import { page } from '$app/stores';
 
 	export let data: PageData;
 	$: ({ posts } = data);
 	$: mainPost = posts[0];
 
 	let scrollY: number;
+    
+    export const widgetsSuffix = $page.url.searchParams.has('widgets') ? "_blank": null;
 </script>
 
 <Metadata title="Dongle • Blog" />
@@ -28,7 +31,7 @@
 			/>
 		</div>
 		<div class="main-post">
-			<a href="/blog/posts/{mainPost.slug}/">
+			<a href="/blog/posts/{mainPost.slug}/" target={widgetsSuffix}>
 				<img
 					alt="Main post thumbnail"
 					height="422"
@@ -51,7 +54,7 @@
 				>
 				<h2>{mainPost.metadata.title}</h2>
 				<p>{mainPost.metadata.description}</p>
-				<Button href="/blog/posts/{mainPost.slug}/" variant="accent"
+				<Button href="/blog/posts/{mainPost.slug}/"  target={widgetsSuffix} variant="accent"
 					>Read More</Button
 				>
 			</div>
@@ -59,7 +62,7 @@
 		{#if posts.slice(1).length > 0}
 			<div class="blog-cards">
 				{#each posts.slice(1) as post}
-					<BlogCard slug={post.slug} {...post.metadata} />
+					<BlogCard target={widgetsSuffix} slug={post.slug} {...post.metadata} />
 				{/each}
 			</div>
 		{:else}
