@@ -11,6 +11,8 @@
 	let scrollY: number;
     
     export const widgetsSuffix = $page.url.searchParams.has('widgets') ? "_blank": null;
+	export const prerender = false;
+	export const ssr = true;
 </script>
 
 <Metadata title="Dongle • Blog" />
