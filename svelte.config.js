@@ -17,7 +17,7 @@ const config = {
 			$data: "src/data",
 			$layout: "src/layout"
 		},
-		adapter: adapter({ edge: true })
+		adapter: adapter({ runtime: 'edge' })
 	},
 	preprocess: [
 		mdsvex({
